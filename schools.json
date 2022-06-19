@@ -1,0 +1,150 @@
+{
+  "data": [
+  { 
+    "id": "1",
+    "name" : "Lehman College", 
+    "Address": "250 Bedford Park Blvd W, The Bronx, NY 10468",
+    "4 Year": true
+  },
+  {
+    "id": "2",
+    "name" : "Baruch College",
+    "Address": "55 Lexington Ave, New York, NY 10010",
+    "4 Year": true
+  },
+  {
+    "id": "3",
+    "name" : "John Jay College",
+    "Address": "524 W 59th St, New York, NY 10019",
+    "4 Year": true
+  },
+  {
+    "id": "4",
+    "name" : "Hunter College", 
+    "Address": "695 Park Ave, New York, NY 10065",
+    "4 Year": true
+
+  },
+  {
+    "id": "5",
+    "name" : "Borough Manhattan Community College", 
+    "Address": "199 Chambers St, New York, NY 10007",
+    "4 Year": false
+  },
+  {
+    "id": "6",
+    "name" : "Kingsborough Community College", 
+    "Address": "2001 Oriental Blvd, Brooklyn, NY 11235",
+    "4 Year": false
+  },
+
+  {
+    "id": "7",
+    "name" : "Bronx community College",
+    "Address": "2155 University Ave, The Bronx, NY 10453",
+    "4 Year": false
+  },
+  {
+    "id": "8",
+    "name" : "College of Staten Island", 
+    "Address": "2800 Victory Blvd, Staten Island, NY 10314",
+    "4 Year": true
+  },
+  {
+    "id": "9",
+    "name" : "Craig Newmark Graduate School of Journalism",
+    "Address": "219 W 40th St, New York, NY 10018",
+    "4 Year": true
+  },
+  {
+    "id": "10",
+    "name" : "CUNY Graduate Center", 
+    "Address": "365 5th Ave, New York, NY 10016",
+    "4 Year": false
+  },
+  {
+    "id": "11",
+    "name" : "CUNY Graduate School of Public Health and Health Policy", 
+    "Address": "55 W 125th St, New York, NY 10027",
+    "4 Year": false
+  },
+  {
+    "id": "12",
+    "name" : "CUNY School of Labor and Urban Studies", 
+    "Address": "25 W 43rd St 19th floor, New York, NY 10036",
+    "4 Year": false
+  },
+  {
+    "id": "13",
+    "name" : "CUNY School of Law", 
+    "Address": "2 Ct Square W, Queens, NY 11101",
+    "4 Year": true
+  },
+  {
+    "id": "14",
+    "name" : "CUNY School of Professional Studies", 
+    "Address": "The Epic, 119 W 31st St, New York, NY 10001",
+    "4 Year": true
+  },
+  {
+    "id": "15",
+    "name" : "Guttman Community College", 
+    "Address": "50 W 40th St, New York, NY 10018",
+    "4 Year": false
+  },
+  {
+    "id": "19",
+    "name" : "Hostos Community College", 
+    "Address": "500 Grand Concourse, The Bronx, NY 10451",
+    "4 Year": false
+  },
+  {
+    "id": "20",
+    "name" : "LaGuardia Community College", 
+    "Address": "31-10 Thomson Ave, Queens, NY 11101",
+    "4 Year": false
+  },
+  {
+    "id": "21",
+    "name" : "Macaulay Honors College", 
+    "Address": "35 W 67th St, New York, NY 10023",
+    "4 Year": true
+  },
+  {
+    "id": "22",
+    "name" : "Medgar Evers College", 
+    "Address": "1650 Bedford Ave, Brooklyn, NY 11225",
+    "4 Year": true
+  },
+  {
+    "id": "23",
+    "name" : "New York City College of Technology",
+    "Address": "300 Jay St, Brooklyn, NY 11201",
+    "4 Year": true
+  },
+  {
+    "id": "24",
+    "name": "Queens College", 
+    "Address": "65-30 Kissena Blvd, Queens, NY 11367",
+    "4 Year": true
+  },
+  {
+    "id": "25",
+    "name" : "Queensborough Community College", 
+    "Address": "222-05 56th Ave, Queens, NY 11364",
+    "4 Year": false
+  },
+  {
+    "id": "26",
+    "name" : "The City College of New York", 
+    "Address": "160 Convent Ave, New York, NY 10031",
+    "4 Year": true
+  },
+  {
+    "id": "27", 
+    "name" : "York College", 
+    "Address": "94-20 Guy R Brewer Blvd, Jamaica, NY 11451",
+    "4 Year": true
+  }
+]
+}
