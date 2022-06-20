@@ -27,6 +27,7 @@ def created():
         'firstname' : request.form['firstname'],
         'lastname' : request.form['lastname'],
         'email' : request.form['email'],
+        "emplid": request.form['emplid']
     }
 
 

@@ -9,17 +9,19 @@ EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 class User:
     def __init__(self, db_data):
         self.id = db_data['id']
-        self.firstname = db_data['firstname']
+        self.Firstname = db_data['Firstname']
         self.lastname = db_data['lastname']
         self.email = db_data['email']
+        self.emplid = db_data['emplid']
         # self.password = db_data['password']
 
 
 
     @classmethod
     def create(cls, data):
-        query = "INSERT INTO `hackathon`.`user` (`firstname`, `lastname`, `email`) VALUES (%(firstname)s, %(lastname)s, %(email)s);"
-        return connectToMySQL("black").query_db(query,data)
+        query = "INSERT INTO `hackathon`.`user` (`firstname`, `lastname`, `email`, `emplid`) VALUES (%(firstname)s, %(lastname)s, %(email)s, %(emplid)s);"
+        return connectToMySQL("hackathon").query_db(query,data)
+
 
 
 
@@ -37,13 +39,13 @@ class User:
     @classmethod
     def retrieve_by(cls, data):
         query = "SELECT * FROM user WHERE id = %(id)s"
-        return connectToMySQL('black').query_db(query, data)
+        return connectToMySQL('hackathon').query_db(query, data)
 
     @classmethod
     def verify_email(cls,data):
         is_valid = True
         query = 'SELECT * FROM user WHERE email = %(email)s;'
-        result = connectToMySQL("black").query_db(query,data)
+        result = connectToMySQL("hackathon").query_db(query,data)
         if len(result)  != 0:
             flash('This Email is already Taken', 'login')
             is_valid = False
@@ -52,7 +54,7 @@ class User:
     @classmethod
     def get_by_email(cls,data):
         query = "SELECT * FROM user WHERE email = %(email)s;"
-        result = connectToMySQL("black").query_db(query,data)
+        result = connectToMySQL("hackathon").query_db(query,data)
         if len(result) < 1:
             return False
         return cls(result[0])
@@ -60,14 +62,14 @@ class User:
     #update data
     @classmethod
     def update(cls, data):
-        query = "UPDATE `black`.`user` SET `firstname` = %(firstname)s, `lastname`=%(lastname)s, `email`= %(email)s, `password`= %(password)s WHERE (`id` = %(id)s);"
-        return connectToMySQL('black').query_db(query, data)
+        query = "UPDATE `hackathon`.`user` SET `firstname` = %(firstname)s, `lastname`=%(lastname)s, `email`= %(email)s, `password`= %(password)s WHERE (`id` = %(id)s);"
+        return connectToMySQL('hackathon').query_db(query, data)
 
     #delete row 
     @classmethod
     def delete(cls, data):
-        query = "DELETE FROM `black`.`user` WHERE (`id` = %(id)s);"
-        return connectToMySQL('black').query_db(query, data)
+        query = "DELETE FROM `hackathon`.`user` WHERE (`id` = %(id)s);"
+        return connectToMySQL('hackathon').query_db(query, data)
 
 
     @staticmethod
@@ -82,13 +84,13 @@ class User:
         if not EMAIL_REGEX.match(user['email']): 
             flash("Invalid email address!", 'create')
             is_valid = False
-        if len(user['password']) < 7:
-            flash("password must be at least 7 characters", 'create')
-            is_valid = False
-        if user['password'] != user['password2']:
-            flash('Both passwords must match', 'create')
-            is_valid = False
-        if len(user['password']) < 8:
-            flash('password must be 8 characters', 'create')
-            is_valid = False
+        # if len(user['password']) < 7:
+        #     flash("password must be at least 7 characters", 'create')
+        #     is_valid = False
+        # if user['password'] != user['password2']:
+        #     flash('Both passwords must match', 'create')
+        #     is_valid = False
+        # if len(user['password']) < 8:
+        #     flash('password must be 8 characters', 'create')
+        #     is_valid = False
         return is_valid

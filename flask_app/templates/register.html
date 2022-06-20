@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <title>Document</title>
+  <title>CUNY Registration</title>
 </head>
 <body>
   <section class="h-100 h-custom" style="background-color: #1d3a83;">
@@ -23,27 +23,25 @@
               <form class="px-md-2" action="/create_user" method="POST">
   
                 <div class="form-outline mb-4">
-                  <input type="text" id="form3Example1q" class="form-control" />
+                  <input type="text" id="form3Example1q" class="form-control" name="email" />
                   <label class="form-label" for="form3Example1q">Email</label>
                 </div>
-  
                 <div class="row">
                   <div class="col-md-6 mb-4">
-  
                     <div class="form-outline datepicker">
-                      <input type="text" class="form-control" id="exampleDatepicker1" />
+                      <input type="text" class="form-control" id="exampleDatepicker1"  name="firstname" />
                       <label for="exampleDatepicker1" class="form-label">Firstname</label>
                     </div>
   
                   </div>
                   <div class="col-md-6 mb-4">
-                    <input type="text" class="form-control" id="exampleDatepicker1" />
+                    <input type="text" class="form-control" id="exampleDatepicker1" name="lastname"/>
                       <label for="exampleDatepicker1" class="form-label">Lastname</label>
                   </div>
                 </div>
   
                 <div class="mb-4">
-                  <input type="text" class="form-control" id="exampleDatepicker1" />
+                  <input type="text" class="form-control" id="exampleDatepicker1" name="emplid"/>
                   <label for="exampleDatepicker1" class="form-label">Emplid</label>
                 </div>
   
@@ -51,9 +49,7 @@
                 </div>
   
                 <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>
-  
               </form>
-  
             </div>
           </div>
         </div>
