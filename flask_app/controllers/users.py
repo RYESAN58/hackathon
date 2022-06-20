@@ -74,7 +74,7 @@ def logger():
     session['name'] = f"{user_in_db.Firstname} {user_in_db.lastname}"
     print(session['name'])
     x = session['user']
-    return redirect("/login_page")
+    return redirect("/homepage")
 
 @app.route('/homepage')
 def home_page():

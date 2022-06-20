@@ -25,7 +25,17 @@
       </ul>
     </div>
   </nav>
-  <h2>HELLO! {{name}}</h2>
+  <div style="display: flex; flex-direction: row; justify-content: space-between;">
+    <h2>HELLO! {{name}}</h2>
+    <div>
+      <a href="#"> Purchase More Coins </a>
+      <br>
+      <a href="#"> EARN More Coins </a>
+      <br>
+      <a href="#"> SHOP at <span style="color: #1d3a83;">CUNY</span>store </a>
+      
+    </div>
+  </div>
   <table class="table">
     <thead class="thead-dark">
       <tr>
@@ -62,7 +72,6 @@
         {%endif%}
       </tr>
       {%endfor%}
-
     </tbody>
   </table>
 </body>
