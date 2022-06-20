@@ -50,6 +50,9 @@ def created():
 
 @app.route("/login_page")
 def login_page():
+    if "user" in session:
+        x = session['user']
+        return render_template('login.html' )
     return render_template('login.html')
 
 
@@ -60,7 +63,13 @@ def logger():
     if not user_in_db:
         flash("Invalid Email", 'login')
         return redirect("/login_page")
-    # session['user'] = user_in_db.id
-    # session['name'] = f"{user_in_db.firstname} {user_in_db.lastname}"
-    # x = session['user']
+    user_data = {
+      "user_id": user_in_db
+      }
+    crypto = Coin.get_specific(user_data)
+    print(crypto)
+    session['user'] = user_in_db.id
+    session['name'] = f"{user_in_db.Firstname} {user_in_db.lastname}"
+    print(session['name'])
+    x = session['user']
     return redirect("/login_page")
