@@ -464,16 +464,16 @@ ol {
 
 .process-step {
 	position: relative;
-	text-align: center;
-	padding: 35px;
+	text-align: bottom;
+	padding: 33px;
 	margin-top: 30px;
 	-webkit-box-shadow: 0 14px 43px rgba(33, 54, 61, 0.15);
 	        box-shadow: 0 14px 43px rgba(33, 54, 61, 0.15);
 }
 
 .process-step .process-icon {
-	height: 55px;
-	margin-bottom: 30px;
+	height: 100px;
+	margin-bottom: 20px;
 	padding-top: 5px;
 	
 }
