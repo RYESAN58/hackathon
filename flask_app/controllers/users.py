@@ -38,3 +38,20 @@ def created():
         y = User.create(data)
         flash('Succesfully Added in database', 'success')
         return redirect('/register')
+
+@app.route("/login_page")
+def login_page():
+    return render_template('login.html')
+
+
+@app.route('/login', methods = ['POST'])
+def logger():
+    data = {'email': request.form['email']}
+    user_in_db = User.get_by_email(data)
+    if not user_in_db:
+        flash("Invalid Email", 'login')
+        return redirect("/login_page")
+    # session['user'] = user_in_db.id
+    # session['name'] = f"{user_in_db.firstname} {user_in_db.lastname}"
+    # x = session['user']
+    return redirect("/login_page")
