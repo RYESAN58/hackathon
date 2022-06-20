@@ -18,6 +18,20 @@
               class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
               alt="Sample photo">
             <div class="card-body p-4 p-md-5">
+              {% with messages = get_flashed_messages(category_filter=['create']) %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <p style="color: red; font-weight: bold;">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    {% with messages = get_flashed_messages(category_filter=['success']) %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <p style="color: rgb(11, 104, 34); font-weight: bold;">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
               <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Info</h3>
   
               <form class="px-md-2" action="/create_user" method="POST">

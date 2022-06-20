@@ -15,8 +15,6 @@ class User:
         self.emplid = db_data['emplid']
         # self.password = db_data['password']
 
-
-
     @classmethod
     def create(cls, data):
         query = "INSERT INTO `hackathon`.`user` (`firstname`, `lastname`, `email`, `emplid`) VALUES (%(firstname)s, %(lastname)s, %(email)s, %(emplid)s);"
@@ -83,6 +81,9 @@ class User:
             is_valid = False
         if not EMAIL_REGEX.match(user['email']): 
             flash("Invalid email address!", 'create')
+            is_valid = False
+        if len(user['emplid']) < 5:
+            flash("Must have emplid", "create")
             is_valid = False
         # if len(user['password']) < 7:
         #     flash("password must be at least 7 characters", 'create')

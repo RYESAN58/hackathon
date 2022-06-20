@@ -16,13 +16,11 @@ def index():
 def reggie():
     return render_template("register.html")
 
-
-
 @app.route('/create_user', methods= ['POST'])
 def created():
 
     if not User.validate(request.form):
-        return redirect('/')
+        return redirect('/register')
     data = {
         'firstname' : request.form['firstname'],
         'lastname' : request.form['lastname'],
@@ -34,9 +32,9 @@ def created():
     x = {'email':request.form['email']}
     checker = User.verify_email(x)
     if checker == False:
-        return redirect('/')
+        return redirect('/register')
 
     else:
         y = User.create(data)
         flash('Succesfully Added in database', 'success')
-        return redirect('/')
+        return redirect('/register')
