@@ -14,6 +14,8 @@ class Coin:
 
     @classmethod
     def get_specific(cls, data):
-      query = "SELECT * from cuny_coin WHERE user_id = %(user_id)s"
-      return connectToMySQL('hackathon').query_db(query, data)
+        query = "SELECT * from cuny_coin WHERE user_id = %(user_id)s"
+        return connectToMySQL('hackathon').query_db(query, data)
+
+    
 

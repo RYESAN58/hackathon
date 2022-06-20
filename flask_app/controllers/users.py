@@ -1,7 +1,9 @@
+from unicodedata import name
 from flask_app import app
 from flask import render_template, redirect, request, session, flash
 from flask_app.models.user import User
 from flask_app.models.coin import Coin
+from flask_app.models.api import Data
 from random import randrange
 
 from flask_bcrypt import Bcrypt
@@ -73,3 +75,14 @@ def logger():
     print(session['name'])
     x = session['user']
     return redirect("/login_page")
+
+@app.route('/homepage')
+def home_page():
+    x = Data.get_all_crypto()
+    print(session['user'])
+    data= {
+        "user_id": session['user'] 
+    }
+    y = Coin.get_specific(data)
+    print("this is YY", y)
+    return render_template('user.info.html', cryptos = x, cuny_crypto = y, name = session["name"])

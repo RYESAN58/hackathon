@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+  <title>Document</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><span style="color:#1d3a83;">CUNY</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+      </ul>
+    </div>
+  </nav>
+  <h2>HELLO! {{name}}</h2>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">icon</th>
+        <th scope="col">Name</th>
+        <th>Balance</th>
+        <th scope="col">Price</th>
+        <th scope="col">Market Cap</th>
+        <th scope="col">last 24H price Change</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for info in cuny_crypto %}
+      <tr>
+        <td><img src="static/images/Crypto_Coin_transparent.png" style="height: 20px ; width: auto;" alt=""></td>
+        <td>CUNY Coin</td>
+        <td>${{info.balance}}</td>
+        <td style="color: green;">$5.00</td>
+        <td>$103281763</td>
+        <td>$6</td>
+      </tr>
+      {% endfor %}
+      {% for crypto in cryptos%}
+      <tr>
+        <td><img src="{{crypto.image}}" alt="" style="height: 20px; width: auto;"></td>
+        <td>{{crypto.name}}</td>
+        <td>N/a</td>
+        <td style="color: green;">${{crypto.current_price}}</td>
+        <td>${{crypto.market_cap}}</td>
+        {%if crypto.price_change_24h < 0: %}
+          <td style="color: red;">${{crypto.price_change_24h}}</td>
+        {% else: %}
+          <td style="color: green;">${{crypto.price_change_24h}}</td>
+        {%endif%}
+      </tr>
+      {%endfor%}
+
+    </tbody>
+  </table>
+</body>
+</html>
