@@ -1,8 +1,8 @@
 from flask_app import app
 from flask import render_template, redirect, request, session, flash
 from flask_app.models.user import User
-# from flask_app.models.show import Show
-# from flask_app.models.liked import Liked
+from flask_app.models.coin import Coin
+from random import randrange
 
 from flask_bcrypt import Bcrypt
 
@@ -29,6 +29,7 @@ def created():
     }
 
 
+
     x = {'email':request.form['email']}
     checker = User.verify_email(x)
     if checker == False:
@@ -36,6 +37,14 @@ def created():
 
     else:
         y = User.create(data)
+        x = User.retrieve_by(data)
+
+        new_data = {
+          "user_id": x[0]['id'],
+          "balance": randrange(10,70)
+          }
+        Coin.add_specific(new_data)
+        print("THIS IS NEW DATA!!!",new_data)
         flash('Succesfully Added in database', 'success')
         return redirect('/register')
 

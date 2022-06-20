@@ -36,7 +36,7 @@ class User:
     #retriever all specific data
     @classmethod
     def retrieve_by(cls, data):
-        query = "SELECT * FROM user WHERE id = %(id)s"
+        query = "SELECT * FROM user WHERE email = %(email)s"
         return connectToMySQL('hackathon').query_db(query, data)
 
     @classmethod
@@ -56,19 +56,6 @@ class User:
         if len(result) < 1:
             return False
         return cls(result[0])
-
-    #update data
-    @classmethod
-    def update(cls, data):
-        query = "UPDATE `hackathon`.`user` SET `firstname` = %(firstname)s, `lastname`=%(lastname)s, `email`= %(email)s, `password`= %(password)s WHERE (`id` = %(id)s);"
-        return connectToMySQL('hackathon').query_db(query, data)
-
-    #delete row 
-    @classmethod
-    def delete(cls, data):
-        query = "DELETE FROM `hackathon`.`user` WHERE (`id` = %(id)s);"
-        return connectToMySQL('hackathon').query_db(query, data)
-
 
     @staticmethod
     def validate(user):
